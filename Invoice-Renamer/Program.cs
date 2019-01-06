@@ -24,8 +24,7 @@ namespace Invoice_Renamer
 
             Console.WriteLine("Please input your invoice folder's location: \n(e.g \'C:\\Users\\JohnSmith\\Documents\\Invoices\')");
 
-            //string pathInput = Console.ReadLine();
-            string pathInput = "C:\\Users\\luke\\Desktop\\roo inv 2";
+            string pathInput = Console.ReadLine();
             string folderPath = pathInput + "\\"; 
 
             Console.WriteLine("Are you sure you wish to proceed? \n \'y / n\'");
