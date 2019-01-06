@@ -31,3 +31,4 @@ C:\Users\luke\source\repos\Invoice-Renamer\Invoice-Renamer\obj\Release\Invoice-R
 C:\Users\luke\source\repos\Invoice-Renamer\Invoice-Renamer\obj\Release\Invoice-Renamer.csproj.CopyComplete
 C:\Users\luke\source\repos\Invoice-Renamer\Invoice-Renamer\obj\Release\Invoice-Renamer.exe
 C:\Users\luke\source\repos\Invoice-Renamer\Invoice-Renamer\obj\Release\Invoice-Renamer.pdb
+C:\Users\luke\source\repos\Invoice-Renamer\Invoice-Renamer\obj\Release\Invoice-Renamer.csprojAssemblyReference.cache

@@ -24,7 +24,8 @@ namespace Invoice_Renamer
 
             Console.WriteLine("Please input your invoice folder's location: \n(e.g \'C:\\Users\\JohnSmith\\Documents\\Invoices\')");
 
-            string pathInput = Console.ReadLine();
+            //string pathInput = Console.ReadLine();
+            string pathInput = "C:\\Users\\luke\\Desktop\\roo inv 2";
             string folderPath = pathInput + "\\"; 
 
             Console.WriteLine("Are you sure you wish to proceed? \n \'y / n\'");
@@ -58,7 +59,7 @@ namespace Invoice_Renamer
             {
                 string filePath = folderPath + str;
                 string invoiceDate = GetInvoiceDate(filePath);
-                ChangeInvoiceName(folderPath, str, invoiceDate);
+                ChangeInvoiceName(folderPath, str, invoiceDate, 0);
             }
 
             Console.WriteLine("Completed. Press any key to exit.");
@@ -172,10 +173,21 @@ namespace Invoice_Renamer
         /// <param name="folderPath"></param>
         /// <param name="fileName"></param>
         /// <param name="invoiceDate"></param>
-        static void ChangeInvoiceName(string folderPath, string fileName, string invoiceDate)
-        {
-            string targetFile = folderPath + "Invoice " + invoiceDate + ".pdf";
-            File.Move(folderPath + fileName, targetFile);
+        static void ChangeInvoiceName(string folderPath, string fileName, string invoiceDate, int attempt)
+        {   
+            string targetFile = attempt != 0 ? 
+                folderPath + "Invoice " + invoiceDate + " (" + attempt + ")" + ".pdf" : folderPath + "Invoice " + invoiceDate + ".pdf";
+
+            attempt += 1;
+            try
+            {
+                File.Move(folderPath + fileName, targetFile);
+            }
+            catch (IOException)
+            {
+                ChangeInvoiceName(folderPath, fileName, invoiceDate, attempt);
+            }
+            Console.WriteLine("renamed " + targetFile);
         }
     }
 
